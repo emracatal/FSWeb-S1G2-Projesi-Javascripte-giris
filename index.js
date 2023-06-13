@@ -20,17 +20,16 @@ Aşağıdakileri yap:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-const surucuYasi = 35;
-if (surucuYasi >= 18) {
+/* const surucuYasi=15;
+if(surucuYasi>18){
   console.log("true")
-} else {
-  console.log("true")
-}
+}else{
+  console.log("false")
+} */
 
-
-/*KISA HALİ;
+//KISA HALİ
 const surucuYasi = 17;
-console.log(surucuYasi>=18);*/
+console.log(surucuYasi >= 18);
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
@@ -46,9 +45,9 @@ Aşağıdakileri yap:
 let deger1 = 10;
 let deger2 = 10;
 if (deger1 === deger2) {
-  console.log(deger1)
+  console.log(deger1);
 } else {
-  console.log(deger1)
+  console.log(deger1);
 }
 
 /*
@@ -63,8 +62,8 @@ Aşağıdakileri yap:
 */
 
 const a = "1999";
-const b = toString(a)
-console.log(b)
+const b = toString(a);
+console.log(b);
 
 /*
 Görev 1d - Çarpma
@@ -76,10 +75,9 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
 */
 
 function carpma(a, b) {
-  return (a * b);
+  return a * b;
 }
 console.log(carpma(7, 4));
-
 
 /* Görev 2 : Köpeğin Yaşı */
 
@@ -91,7 +89,7 @@ Aşağıdakileri yap:
  */
 
 function kopeginYasi(insanYasi) {
-  return (insanYasi * 7)
+  return insanYasi * 7;
 }
 console.log(kopeginYasi(7));
 
@@ -135,7 +133,7 @@ function oyun(oyuncu, bilgisayar) {
   } else if (oyuncu === "Makas" && bilgisayar === "Kağıt") {
     return "Kazandın!";
   } else {
-    return "Kaybettin!"
+    return "Kaybettin!";
   }
 }
 
@@ -164,10 +162,9 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 */
 
 function milDonusturucu(km) {
-  return (km * 0.621371);
+  return km * 0.621371;
 }
 console.log(milDonusturucu(5));
-
 
 //Görev 4b - Santimetreden Feet
 /*
@@ -180,7 +177,7 @@ Google'da arama ipucu: "feet cm dönüştürme"
 */
 
 function feetDonusturucu(cm) {
-  return (cm / 30.48);
+  return cm / 30.48;
 }
 console.log(feetDonusturucu(5));
 
@@ -200,13 +197,13 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 function cocukSarkisi(sayi) {
   return (
     sayi +
-    " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!")
+    " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!"
+  );
 }
 
-for (let i = 0; i < 5; i++) { }
-console.log(cocukSarkisi(5))
-
-
+for (let i = 5; i > 0; i--) {
+  console.log(cocukSarkisi(i));
+}
 /* Görev 6 : Not Hesaplayıcı */
 
 /*
@@ -224,18 +221,18 @@ Aşağdakileri notHesapla fonksiyonunda yap.
 function notHesapla(not) {
   if (not >= 90 && not <= 100) {
     return "A aldın";
-  } else if (not >= 80 && not < 90) {
+  } else if (not >= 80 && not <= 89) {
     return "B aldın";
-  } else if (not >= 70 && not < 80) {
+  } else if (not >= 70 && not <= 79) {
     return "C aldın";
-  } else if (not >= 60 && not < 70) {
+  } else if (not >= 60 && not <= 69) {
     return "D aldın";
   } else {
     return "F aldın";
   }
 }
 
-console.log(notHesapla(50))
+console.log(notHesapla(50));
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
 
@@ -248,9 +245,19 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yap.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(metin) {
+  let count = 0;
+  const newMetin = metin.toLowerCase();
+  const metinArray = newMetin.split("");
+  const sesliHarfler = ["a", "e", "ı", "i", "o", "ö", "u", "ü"];
+  for (let i = 0; i < metinArray.length; i++) {
+    if (sesliHarfler.includes(metinArray[i])) {
+      count++;
+    }
+  }
+  return count;
 }
+console.log(sesliHarfSayaci("deneme"));
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
 function sa() {
